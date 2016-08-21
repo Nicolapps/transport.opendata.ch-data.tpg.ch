@@ -4,5 +4,17 @@
   "description": "Tool to create a lookup table between SBB stops names and TPG stops names",
   "main": "main.js",
   "author": "Nicolas Ettlin <n2509@icloud.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "mysql": "^2.11.1",
+    "request": "^2.74.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nicolapps/transport.opendata.ch-data.tpg.ch"
+  }
 }
