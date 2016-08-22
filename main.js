@@ -27,6 +27,15 @@ connection.connect((error) => {
     console.log('ERROR'.red.inverse + " Cannot connect to database. Please make sure that the database information in config.js is correct.")
     process.exit()
   }
+
+  //-------------------------------------
+  // Create the database
+  //-------------------------------------
+  var query = 'CREATE TABLE IF NOT EXISTS `tpg-sbb` ( `id` INT NOT NULL AUTO_INCREMENT , `tpg` VARCHAR(255) NOT NULL , `sbb` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`), INDEX `sbb` (`sbb`), UNIQUE `tpg` (`tpg`)) ENGINE = InnoDB;'
+  connection.query(query, (err, rows, fields) => {
+    if(err) throw err
+  });
+
 })
 
 //-------------------------------------
@@ -65,15 +74,20 @@ client.get(tpgApiUrl, (err, res, body) => { // Fetch GetPhysicalStops
           let sbbStopName = body.stations[0].name
           console.log(sbbStopName.green)
 
+          let query = 'INSERT INTO `tpg-sbb` (`tpg`, `sbb`) VALUES (?, ?)'
+          connection.query(query, [tpgStopName, sbbStopName], (error) => {
+            if(error) throw error
+          })
+
 
         } else {
           console.log('ERROR'.red.inverse)
           console.log(body)
         }
       })
-    }, Math.floor(Math.random()*5*60*1000))  // Delay the request to not exceed
-                                             // the transport.opendata.ch limit
-                                             // (300 req/minute)
+    }, Math.floor(Math.random()*5*60*1000+3000))
+    // Delay the requests to not exceed the transport.opendata.ch rate limit
+    // (300 req/minute)
   }
 
 })
