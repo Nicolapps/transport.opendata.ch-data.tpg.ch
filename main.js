@@ -31,7 +31,7 @@ connection.connect((error) => {
   //-------------------------------------
   // Create the database
   //-------------------------------------
-  var query = 'CREATE TABLE IF NOT EXISTS `tpg-sbb` ( `id` INT NOT NULL AUTO_INCREMENT , `tpg` VARCHAR(255) NOT NULL , `sbb` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`), INDEX `sbb` (`sbb`), UNIQUE `tpg` (`tpg`)) ENGINE = InnoDB;'
+  var query = 'CREATE TABLE IF NOT EXISTS `tpg-sbb` ( `id` INT NOT NULL AUTO_INCREMENT , `tpg` VARCHAR(255) NOT NULL , `sbb` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`), INDEX `sbb` (`sbb`), INDEX `tpg` (`tpg`)) ENGINE = InnoDB;'
   connection.query(query, (err, rows, fields) => {
     if(err) throw err
   });
