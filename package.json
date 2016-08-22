@@ -11,7 +11,7 @@
   "dependencies": {
     "colors": "^1.1.2",
     "mysql": "^2.11.1",
-    "request": "^2.74.0"
+    "request-json": "^0.6.1"
   },
   "repository": {
     "type": "git",

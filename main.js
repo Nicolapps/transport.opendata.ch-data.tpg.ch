@@ -4,7 +4,7 @@
 
 var colors  = require('colors'),
     mysql   = require('mysql'),
-    request = require('request'),
+    request = require('request-json'),
     config  = require('./config')
 
 console.log('transport.opendata.ch-data.tpg.ch'.cyan.inverse)
@@ -25,7 +25,7 @@ var connection = mysql.createConnection({
 connection.connect((error) => {
   if(error) {
     console.log('ERROR'.red.inverse + " Cannot connect to database. Please make sure that the database information in config.js is correct.")
-    process.exit();
+    process.exit()
   }
 })
 
@@ -34,4 +34,34 @@ connection.connect((error) => {
 // transports publics genevois API
 //-------------------------------------
 
-// @TODO : Fetch GetPhysicalStops
+var client = request.createClient('http://localhost:8888/')
+
+var tpgApiUrl = 'http://prod.ivtr-od.tpg.ch/v1/GetPhysicalStops.json?key='+config.apiKey
+
+client.get(tpgApiUrl, (err, res, body) => { // Fetch GetPhysicalStops
+
+  if(err || body.errorMessage) {
+    console.log('ERROR'.red.inverse + " Cannot connect to TPG open data API. Please make sure that the TPG open data API key in config.js is correct.")
+    process.exit()
+  }
+
+  for(var i = 0; i < body.stops.length; i++){ // For each stop...
+    var stop = body.stops[i]
+
+    let tpgStopName = stop.stopName
+
+    //-------------------------------------
+    // Find the stop with the Transport API
+    //-------------------------------------
+    var transportApiURL = 'http://transport.opendata.ch/v1/locations'+
+                          '?x='+stop.physicalStops[0].coordinates.latitude+
+                          '&y='+stop.physicalStops[0].coordinates.longitude
+
+    client.get(transportApiURL, (err, res, body) => {
+      process.stdout.write(tpgStopName.cyan + '... ') // console.log without carriage return
+      var sbbStopName = body.stations[0].name
+      console.log(sbbStopName.green)
+    })
+  }
+
+})
