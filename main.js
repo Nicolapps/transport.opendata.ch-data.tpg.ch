@@ -53,15 +53,27 @@ client.get(tpgApiUrl, (err, res, body) => { // Fetch GetPhysicalStops
     //-------------------------------------
     // Find the stop with the Transport API
     //-------------------------------------
-    var transportApiURL = 'http://transport.opendata.ch/v1/locations'+
+    let transportApiURL = 'http://transport.opendata.ch/v1/locations'+
                           '?x='+stop.physicalStops[0].coordinates.latitude+
                           '&y='+stop.physicalStops[0].coordinates.longitude
 
-    client.get(transportApiURL, (err, res, body) => {
-      process.stdout.write(tpgStopName.cyan + '... ') // console.log without carriage return
-      var sbbStopName = body.stations[0].name
-      console.log(sbbStopName.green)
-    })
+    setTimeout(() => {
+      client.get(transportApiURL, (err, res, body) => {
+        process.stdout.write(tpgStopName.cyan + '... ')
+
+        if('stations' in body){
+          let sbbStopName = body.stations[0].name
+          console.log(sbbStopName.green)
+
+
+        } else {
+          console.log('ERROR'.red.inverse)
+          console.log(body)
+        }
+      })
+    }, Math.floor(Math.random()*5*60*1000))  // Delay the request to not exceed
+                                             // the transport.opendata.ch limit
+                                             // (300 req/minute)
   }
 
 })
