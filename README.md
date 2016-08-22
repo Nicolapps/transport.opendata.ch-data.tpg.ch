@@ -1,5 +1,7 @@
 # transport.opendata.ch-data.tpg.ch
 
+![Demo](/demo.png)
+
 Tool to create a lookup table between SBB stops names and TPG stops names
 
 ## How to use ?
