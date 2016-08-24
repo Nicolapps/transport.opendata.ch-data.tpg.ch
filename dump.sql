@@ -1,33 +1,39 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.1.1
--- http://www.phpmyadmin.net
+-- version 4.6.2
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Aug 22, 2016 at 02:57 PM
--- Server version: 5.5.42
--- PHP Version: 5.6.7
+-- Client :  h2mysql4
+-- Généré le :  Mer 24 Août 2016 à 17:35
+-- Version du serveur :  5.5.49-log
+-- Version de PHP :  5.6.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
--- Database: `my_db`
+-- Base de données :  `hcug_nicolappsch`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tpg-sbb`
+-- Structure de la table `tpg-sbb`
 --
 
 CREATE TABLE `tpg-sbb` (
   `id` int(11) NOT NULL,
   `tpg` varchar(255) NOT NULL,
   `sbb` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=785 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tpg-sbb`
+-- Contenu de la table `tpg-sbb`
 --
 
 INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
@@ -55,7 +61,7 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (22, 'Belle-Idée-Salève', 'Chêne-Bourg, Belle-Idée-Salève'),
 (23, 'Sézegnin', 'Avusy, Sézegnin'),
 (24, 'Wendt', 'Genève, Wendt'),
-(25, 'Av. de l''Ain', 'Vernier, Avenue de l''Ain'),
+(25, 'Av. de l\'Ain', 'Vernier, Avenue de l\'Ain'),
 (26, 'Bandol', 'Onex, Bandol'),
 (27, 'Vélodrome', 'Plan-les-Ouates, Vélodrome'),
 (28, 'Champ-Claude', 'Vernier, Champ-Claude'),
@@ -65,10 +71,10 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (32, 'Claparède', 'Genève, Claparède'),
 (33, 'Florissant', 'Genève, Florissant'),
 (34, 'Montfleury', 'Versoix, Montfleury'),
-(35, 'Acacias', 'Ambilly, Acacias-TAC'),
+(35, 'Acacias (F)', 'Ambilly, Acacias-TAC'),
 (36, 'Blandonnet', 'Vernier, Blandonnet'),
 (37, 'La Loure', 'Jussy, La Loure'),
-(38, 'Musée d''ethno.', 'Genève, Musée d''ethnographie'),
+(38, 'Musée d\'ethno.', 'Genève, Musée d\'ethnographie'),
 (39, 'Ch. des Bornes', 'Presinge, Bornes'),
 (40, 'Villars', 'Hermance, Villars'),
 (41, 'Loëx-Lanance', 'Bernex, Loëx-Lanance'),
@@ -87,14 +93,14 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (54, 'Chambésy-Place', 'Chambésy, place'),
 (55, 'Anières-Chavannes', 'Anières, Chavannes'),
 (56, 'Th-Vallard-Dne', 'Thônex, Vallard'),
-(57, 'Rte d''Annecy', 'Bardonnex, Route d''Annecy'),
+(57, 'Rte d\'Annecy', 'Bardonnex, Route d\'Annecy'),
 (58, 'Maisonnette', 'Bernex, Maisonnette'),
 (59, 'Les Bougeries', 'Vandoeuvres, Les Bougeries'),
 (60, 'Versoix-Lachenal', 'Versoix, Lachenal'),
 (61, 'Rte de Compois', 'Meinier, route de Compois'),
 (62, 'Gex-G.Charpak', 'Gex, Georges Charpak (F)'),
 (63, 'Cocuaz', 'Vandoeuvres, Cocuaz'),
-(64, 'Merle-d''Aubigné', 'Genève, Merle-d''Aubigné'),
+(64, 'Merle-d\'Aubigné', 'Genève, Merle-d\'Aubigné'),
 (65, 'Corsier-Village', 'Corsier GE, village'),
 (66, 'Petite-Grave', 'Cartigny, Petite-Grave'),
 (67, 'Chemin du Bac', 'Petit-Lancy, Chemin du Bac'),
@@ -130,8 +136,8 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (97, 'Plan-les-Ouates', 'Plan-les-Ouates, village'),
 (98, 'Vüy', 'Carouge GE, Vüy'),
 (99, 'Valencien', 'Thônex, Valencien'),
-(100, 'Queue-d''Arve', 'Genève, Queue-d''Arve'),
-(101, 'L''avenir', 'Presinge, L''Avenir'),
+(100, 'Queue-d\'Arve', 'Genève, Queue-d\'Arve'),
+(101, 'L\'avenir', 'Presinge, L\'Avenir'),
 (102, 'Stade de Genève', 'Carouge GE, Stade de Genève'),
 (103, 'Satigny-CS', 'Satigny, Centre sportif'),
 (104, 'Pont-de-Peney', 'Aire-la-Ville, Pont-de-Peney'),
@@ -143,7 +149,7 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (110, 'Châtaignières', 'Jussy, Châtaignières'),
 (111, 'Les Quoattes', 'Avusy, Les Quoattes'),
 (112, 'Aubert', 'Genève, Aubert'),
-(113, 'Carre-d''Amont', 'Meinier, Le Carre-d''Amont'),
+(113, 'Carre-d\'Amont', 'Meinier, Le Carre-d\'Amont'),
 (114, 'Ch. de la Douane', 'Laconnex, Chemin de la Douane'),
 (115, 'Athenaz-Ecole', 'Avusy, Athenaz-Ecole'),
 (116, 'Barde', 'Vernier, Barde'),
@@ -153,10 +159,10 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (120, 'Sézenove-Ferrand', 'Bernex, Sézenove-Ferrand'),
 (121, 'Gradelle', 'Cologny, Gradelle'),
 (122, 'Palladium', 'Genève, Palladium'),
-(123, 'Coq-d''Inde', 'Chêne-Bougeries, Coq-d''Inde'),
+(123, 'Coq-d\'Inde', 'Chêne-Bougeries, Coq-d\'Inde'),
 (124, 'Les Bruyères', 'Plan-les-Ouates, Les Bruyères'),
 (125, 'Terre Mousson', 'Satigny, Terre Mousson'),
-(126, 'L''Ouchette', 'Veigy, l''Ouchette'),
+(126, 'L\'Ouchette', 'Veigy, l\'Ouchette'),
 (127, 'Roseraie', 'Genève, Roseraie'),
 (128, 'La Boutique', 'Valleiry, La Boutique'),
 (129, 'Coll.Claparède', 'Chêne-Bougeries,Coll.Claparède'),
@@ -222,7 +228,7 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (189, 'Planta', 'Vandoeuvres, Planta'),
 (190, 'Sauverny-Douane', 'Sauverny, douane'),
 (191, 'Baulacre', 'Genève, Baulacre'),
-(192, 'Pont-d''Arve', 'Genève, Pont-d''Arve'),
+(192, 'Pont-d\'Arve', 'Genève, Pont-d\'Arve'),
 (193, 'Peney-Dessous', 'Satigny, Bois-de-Bay'),
 (194, 'SIG Lignon', 'Vernier, SIG Lignon'),
 (195, 'Sellières', 'Vernier, Sellieres'),
@@ -239,7 +245,7 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (206, 'Gare Eaux-Vives', 'Genève-Eaux-Vives, gare'),
 (207, 'Rippaz', 'Cologny, Rippaz'),
 (208, 'Rte de Presinge', 'Meinier, route de Presinge'),
-(209, 'Molard', 'Genève-Molard'),
+(209, 'Molard', 'Genève, Molard'),
 (210, 'Le Rolliet', 'Plan-les-Ouates, Le Rolliet'),
 (211, 'Courtillets', 'Grand-Lancy, Courtillets'),
 (212, 'Moulin-la-Grave', 'Avusy, Moulin de la Grave'),
@@ -273,7 +279,7 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (240, 'Théâtre', 'Genève, Théâtre'),
 (241, 'Ch. des Palettes', 'Grand-Lancy, Ch. des Palettes'),
 (242, 'Tour-de-Contrôle', 'Meyrin, Tour-de-Contrôle'),
-(243, 'Ch. de l''Eperon', 'Chêne-Bougeries,Ch.de l''Eperon'),
+(243, 'Ch. de l\'Eperon', 'Chêne-Bougeries,Ch.de l\'Eperon'),
 (244, 'Hôpital', 'Genève, Hôpital'),
 (245, 'Collège du Léman', 'Versoix, Collège du Léman'),
 (246, 'UIT', 'Genève, UIT'),
@@ -283,7 +289,6 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (250, 'Calas', 'Genève, Calas'),
 (251, 'Progrès', 'Vernier, Progrès'),
 (252, 'Les Quibières', 'Veyrier, Les Quibières'),
-(253, 'Chambesy-gare', 'Chambésy'),
 (254, 'Parc des Anneaux', 'Prévessin-Moëns, Parc des Anne'),
 (255, 'Belle-Idée-Chêne', 'Thônex, Belle-Idée-Chênes'),
 (256, 'Nations', 'Genève, Nations'),
@@ -345,7 +350,7 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (312, 'Bugnons', 'Meyrin, Bugnons'),
 (313, 'La Fenêtre', 'Genève, La Fenêtre'),
 (314, 'Badosse', 'Plan-les-Ouates, Badosse'),
-(315, 'Saconnex-d''Arve', 'Plan-les-Ouates, Verbant'),
+(315, 'Saconnex-d\'Arve', 'Plan-les-Ouates, Verbant'),
 (316, 'Hôtel-de-Ville', 'Genève, Hôtel-de-Ville'),
 (317, 'Bout-du-Monde', 'Genève, Bout-du-Monde'),
 (318, 'Plein-Sud', 'Thônex, Plein-Sud'),
@@ -393,7 +398,7 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (360, 'Champ-des-Filles', 'Plan-les-Ouates, Ch.-d.-Filles'),
 (361, 'Pregny-Village', 'Pregny, village'),
 (362, 'Saussac', 'Troinex, Saussac'),
-(363, 'Pl. d''Allemogne', 'Thoiry, Pl. d''Allemogne'),
+(363, 'Pl. d\'Allemogne', 'Thoiry, Pl. d\'Allemogne'),
 (364, 'Vy-des-Champs', 'Genève, Vy-des-Champs'),
 (365, 'Cornière', 'Puplinge, Cornière'),
 (366, 'Rte de Corsinge', 'Meinier, route de Corsinge'),
@@ -422,7 +427,7 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (389, 'Jussy-Meurets', 'Jussy, Meurets'),
 (390, 'Chancy-Douane', 'Chancy, douane'),
 (391, 'Moulin-de-Vert', 'Cartigny, Moulin-de-Vert'),
-(392, 'Croisée Eaumorte', 'Cartigny, Croisée d''Eaumorte'),
+(392, 'Croisée Eaumorte', 'Cartigny, Croisée d\'Eaumorte'),
 (393, 'Ch. des Fours', 'Cologny, chemin des Fours'),
 (394, 'Tannay', 'Tannay'),
 (395, 'Frontenex', 'Cologny, Frontenex'),
@@ -444,7 +449,6 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (411, 'Valavran', 'Bellevue GE, Valavran'),
 (412, 'Gavard', 'Carouge GE, Gavard'),
 (413, 'Sillons', 'Thônex, Sillons'),
-(414, 'Les tuilleries', 'Les Tuileries'),
 (415, 'Hermance', 'Hermance'),
 (416, 'Gaillardin', 'Challex, Gaillardin'),
 (417, 'Métropole', 'Genève, Métropole'),
@@ -558,7 +562,7 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (525, 'De-Sauvage', 'Vernier, De-Sauvage'),
 (526, 'Michel-Servet', 'Genève, Michel-Servet'),
 (527, 'Seymaz', 'Chêne-Bougeries, Seymaz'),
-(528, 'L''Abbaye', 'Jussy, L''Abbaye'),
+(528, 'L\'Abbaye', 'Jussy, L\'Abbaye'),
 (529, 'Miléant', 'Genève, Miléant'),
 (530, 'Chantepoulet', 'Genève, Chantepoulet'),
 (531, 'Gros-Chêne', 'Onex, Gros-Chêne'),
@@ -585,7 +589,7 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (552, 'Planche-Brulée', 'Ferney, Planche-Brulée'),
 (553, 'Murailles', 'Meinier, Murailles'),
 (554, 'Arena-Halle 7', 'Grand-Saconnex, Arena'),
-(555, 'Nant-d''Aisy', 'Anières, Nant-d''Aisy'),
+(555, 'Nant-d\'Aisy', 'Anières, Nant-d\'Aisy'),
 (556, 'Riant-Parc', 'Genève, Riant-Parc'),
 (557, 'Ch. des Princes', 'Vésenaz, Chemin des Princes'),
 (558, 'Lion', 'St-Genis, Lion'),
@@ -638,7 +642,7 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (605, 'Jean-Jacques', 'Genève, Jean-Jacques'),
 (606, 'Croix-de-Chavant', 'Confignon, Croix-de-Chavant'),
 (607, 'Tunnel Routier', 'Grand-Saconnex, Tunnel Routier'),
-(608, 'Croix d''Ambilly', 'Ambilly, Croix d''Ambilly'),
+(608, 'Croix d\'Ambilly', 'Ambilly, Croix d\'Ambilly'),
 (609, 'Libellules', 'Vernier, Libellules'),
 (610, 'Cirque', 'Genève, Cirque'),
 (611, 'Rue du Lac', 'Genève, Rue du Lac'),
@@ -702,7 +706,7 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (669, 'Guye', 'Genève, Guye'),
 (670, 'Ecogia', 'Versoix, Ecogia'),
 (671, 'R. de St-Maurice', 'Collonge-Bellerive, Rte St-Mau'),
-(672, 'Rte d''Epeisses', 'Avully, Route d''Epeisses'),
+(672, 'Rte d\'Epeisses', 'Avully, Route d\'Epeisses'),
 (673, 'La Blanche', 'Vandoeuvres, La Blanche'),
 (674, 'Centenaire', 'Plan-les-Ouates, Centenaire'),
 (675, 'Lancy-Pont-Rouge', 'Petit-Lancy, Pont-Rouge'),
@@ -742,7 +746,7 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (709, 'Rochette', 'Onex, Rochette'),
 (710, 'Pont-Bochet', 'Thônex, Pont-Bochet'),
 (711, 'Basselat', 'Presinge, Basselat'),
-(712, 'Musée art-histoire', 'Genève, M. d''art et d''histoire'),
+(712, 'Musée art-histoire', 'Genève, M. d\'art et d\'histoire'),
 (713, 'Ferme Sarasin', 'Grand-Saconnex, Ferme Sarasin'),
 (714, 'Pougny-Gare', 'Pougny, gare'),
 (715, 'Baraque-à-Cloud', 'Gy, Baraque-à-Cloud'),
@@ -776,7 +780,7 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (743, 'Fontanettes', 'Challex, Fontanettes'),
 (744, 'Vieux Moulins', 'St-Julien-en-G., Vieux Moulins'),
 (745, 'Veyrier-Rasses', 'Veyrier, Rasses'),
-(746, 'Gare Cornavin', 'Genève'),
+(746, 'Gare Cornavin', 'Genève, Cornavin'),
 (747, 'Cyprès', 'Thônex, Cyprès'),
 (748, 'Veyr-Tournettes', 'Veyrier, Tournettes'),
 (749, 'Moulin-de-la-Ratte', 'Aire-la-Ville, Moulin-Ratte'),
@@ -792,7 +796,7 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (759, 'Mais. Parlements', 'Genève, Maison des Parlements'),
 (760, 'La Côte', 'Viry, La Côte'),
 (761, 'Piscine de Lancy', 'Grand-Lancy, Piscine de Lancy'),
-(762, 'Val-d''Arve', 'Carouge GE, Val-d''Arve'),
+(762, 'Val-d\'Arve', 'Carouge GE, Val-d\'Arve'),
 (763, 'Motta', 'Genève, Motta'),
 (764, 'Bois-Gourmand', 'Vessy, village'),
 (765, 'Quidort', 'Petit-Lancy, Quidort'),
@@ -814,14 +818,23 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (781, 'Val-Thoiry', 'Thoiry, Val-Thoiry'),
 (782, 'Bardonnex', 'Bardonnex, village'),
 (783, 'Conches', 'Chêne-Bougeries, Conches'),
-(784, 'Baumgartner', 'Carouge GE, Baumgartner');
+(784, 'Baumgartner', 'Carouge GE, Baumgartner'),
+(785, 'Genève (CFF)', 'Genève'),
+(786, 'Vernier (CFF)', 'Vernier'),
+(787, 'Meyrin (CFF)', 'Meyrin'),
+(788, 'Russin (CFF)', 'Russin'),
+(789, 'Satigny (CFF)', 'Satigny'),
+(790, 'Zimeysa (CFF)', 'Zimeysa'),
+(791, 'Lancy-Pont-Rouge (CFF)', 'Lancy-Pont-Rouge'),
+(792, 'Versoix (CFF)', 'Versoix'),
+(793, 'La Plaine (CFF)', 'La Plaine');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables exportées
 --
 
 --
--- Indexes for table `tpg-sbb`
+-- Index pour la table `tpg-sbb`
 --
 ALTER TABLE `tpg-sbb`
   ADD PRIMARY KEY (`id`),
@@ -829,11 +842,14 @@ ALTER TABLE `tpg-sbb`
   ADD KEY `tpg` (`tpg`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables exportées
 --
 
 --
--- AUTO_INCREMENT for table `tpg-sbb`
+-- AUTO_INCREMENT pour la table `tpg-sbb`
 --
 ALTER TABLE `tpg-sbb`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=785;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=794;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
