@@ -31,7 +31,7 @@ connection.connect((error) => {
   //-------------------------------------
   // Create the database
   //-------------------------------------
-  var query = 'CREATE TABLE IF NOT EXISTS `tpg-sbb` ( `id` INT NOT NULL AUTO_INCREMENT , `tpg` VARCHAR(255) NOT NULL , `sbb` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`), INDEX `sbb` (`sbb`), INDEX `tpg` (`tpg`)) ENGINE = InnoDB;'
+  var query = 'CREATE TABLE IF NOT EXISTS `tpg-sbb` ( `id` INT NOT NULL AUTO_INCREMENT , `tpg` VARCHAR(255) NOT NULL , `sbb` VARCHAR(255) NOT NULL , `code` VARCHAR(5) NOT NULL , PRIMARY KEY (`id`), INDEX `sbb` (`sbb`), INDEX `tpg` (`tpg`), INDEX `code` (`code`)) ENGINE = InnoDB;'
   connection.query(query, (err, rows, fields) => {
     if(err) throw err
   });
@@ -58,6 +58,7 @@ client.get(tpgApiUrl, (err, res, body) => { // Fetch GetPhysicalStops
     var stop = body.stops[i]
 
     let tpgStopName = stop.stopName
+    let tpgStopCode = stop.stopCode
 
     //-------------------------------------
     // Find the stop with the Transport API
@@ -68,14 +69,15 @@ client.get(tpgApiUrl, (err, res, body) => { // Fetch GetPhysicalStops
 
     setTimeout(() => {
       client.get(transportApiURL, (err, res, body) => {
+        process.stdout.write(tpgStopCode.red + '... ')
         process.stdout.write(tpgStopName.cyan + '... ')
 
         if('stations' in body){
           let sbbStopName = body.stations[0].name
           console.log(sbbStopName.green)
 
-          let query = 'INSERT INTO `tpg-sbb` (`tpg`, `sbb`) VALUES (?, ?)'
-          connection.query(query, [tpgStopName, sbbStopName], (error) => {
+          let query = 'INSERT INTO `tpg-sbb` (`tpg`, `sbb`, `code`) VALUES (?, ?, ?)'
+          connection.query(query, [tpgStopName, sbbStopName, tpgStopCode], (error) => {
             if(error) throw error
           })
 
