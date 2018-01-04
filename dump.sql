@@ -825,7 +825,7 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (791, 'Lancy-Pont-Rouge (CFF)', 'Lancy-Pont-Rouge'),
 (792, 'Versoix (CFF)', 'Versoix'),
 (793, 'La Plaine (CFF)', 'La Plaine'),
-(793, 'Aéroport-P47', 'Grand-Saconnex, Aéroport-P47');
+(794, 'Aéroport-P47', 'Grand-Saconnex, Aéroport-P47');
 
 --
 -- Index pour les tables exportées
