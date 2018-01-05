@@ -684,7 +684,6 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (650, 'Isaac-Mercier', 'Genève, Isaac-Mercier'),
 (651, 'Aïre', 'Vernier, Aïre'),
 (652, 'Moulins-de-Drize', 'Plan-les-Ouates, Moulins-Drize'),
-(653, 'Isaac-Mercier', 'Genève, Isaac-Mercier'),
 (654, 'Meyrin-Gravière', 'Meyrin, Gravière'),
 (655, 'C.O. Renard', 'Vernier, CO Renard'),
 (656, 'Poste', 'Genève, poste'),
@@ -755,7 +754,7 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (721, 'Le Nant', 'Bellevue GE, Le Nant'),
 (722, 'Baillive', 'Genève, Baillive'),
 (723, 'Calandrini', 'Chêne-Bougeries, Calandrini'),
-(724, 'OMS', 'Genève, BIT'),
+(724, 'OMS', 'Genève, OMS'),
 (725, 'Duret', 'Onex, Duret'),
 (726, 'Gex-Aiglette', 'Gex, Aiglette (F)'),
 (727, 'Parc Montessuit', 'Annemasse, Parc Montessuit'),
@@ -825,7 +824,10 @@ INSERT INTO `tpg-sbb` (`id`, `tpg`, `sbb`) VALUES
 (791, 'Lancy-Pont-Rouge (CFF)', 'Lancy-Pont-Rouge'),
 (792, 'Versoix (CFF)', 'Versoix'),
 (793, 'La Plaine (CFF)', 'La Plaine'),
-(794, 'Aéroport-P47', 'Grand-Saconnex, Aéroport-P47');
+(794, 'Aéroport-P47', 'Grand-Saconnex, Aéroport-P47'),
+(795, 'Meyrin-Gare', 'Meyrin, gare'),
+(796, 'Grand-Puits', 'Meyrin, Grand-Puits'),
+(797, 'Vieux-Bureau', 'Meyrin, Vieux-Bureau');
 
 --
 -- Index pour les tables exportées
